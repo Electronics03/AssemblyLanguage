@@ -1,15 +1,14 @@
     .data
 A:  .word 9, 3, 5, 6, 8, 2, 1, 0, 4, 7
-
     .text
     .globl main
+    
 main:
     la x10, A
     li x11, 10
     jal x1, sort
     li a7, 10
     ecall
-
 swap:
     slli x6, x11, 2
     add x6, x10, x6
@@ -18,7 +17,6 @@ swap:
     sw x7, 0(x6)
     sw x5, 4(x6)
     jalr x0, 0(x1)
-
 sort:
     addi sp, sp, -4
     sw x1, 0(sp)
