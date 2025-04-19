@@ -15,9 +15,7 @@ clear2:
     slli x6, x11, 2
     add x7, x10, x6
 loop:
-    bgeu x5, x7, exit
     sw x0, 0(x5)
     addi x5, x5, 4
-    jal x0, loop
-exit:
+    bltu x5, x7, loop
     jalr x0, 0(x1)
